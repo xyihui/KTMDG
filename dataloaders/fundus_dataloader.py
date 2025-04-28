@@ -10,12 +10,6 @@ import nibabel as nib
 import random
 import custom_transforms
 class FundusSegmentation(Dataset):
-    """
-    Fundus segmentation dataset
-    including 5 domain dataset
-    one for test others for training
-    """
-
     def __init__(self,
                  base_dir=None,
                  phase='train',
@@ -23,11 +17,6 @@ class FundusSegmentation(Dataset):
                  transform=None,
                  state='train',
                  ):
-        """
-        :param base_dir: path to VOC dataset directory
-        :param split: train/val
-        :param transform: transform to apply
-        """
         super().__init__()
         self.state = state
         self._base_dir = base_dir
